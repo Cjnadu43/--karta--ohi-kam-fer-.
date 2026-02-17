@@ -1,0 +1,7 @@
+print("Cj is in epstein file")
+print("I am Canucks")
+print("I am from Delta")
+print("Delta clears Surrey just like Madrid clears Barca")
+print("RIP" + " " + "2011" + " " + "Canucks")
+print("Hello " * 99)
+input("Madrid or Barca?\n")
