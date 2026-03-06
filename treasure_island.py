@@ -38,7 +38,7 @@ elif crossRoad == "left":
         if janat == "red":
             print("you get trapped in the gurmat building! GAME OVER!")
         elif janat == "blue":
-            print("you enter Mr. B's classroom and he chucks a chari across the room and hits you right in the head!")
+            print("you enter Mr. B's classroom and he chucks a chair across the room and hits you right in the head!")
         elif janat == "white":
             print("you get chased by Yuvi because you taxed his munchies! GAME OVER!")
         elif janat == "yellow":
