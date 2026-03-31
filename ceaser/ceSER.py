@@ -4,33 +4,28 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-
-# TODO-1: Create a function called 'encrypt()' that takes 'original_text' and 'shift_amount' as 2 inputs.
-
 def encrypt(original_text, shift_amount):
     encrypted_text = ""
     for letter in original_text:
-        if letter in alphabet:
-
-            shifted_index = alphabet.index(letter) + shift_amount % len(alphabet)
-            encrypted_text += alphabet[shifted_index]
-
-            print(f"the {letter} is not in the alphabet, please enter a valid letter.\n")
-            break
-        elif letter in alphabet:
-            shifted_index = (alphabet.index(letter) + shift_amount) % len(alphabet)
-            encrypted_text += alphabet[shifted_index]
-
-
+        shifted_index = (alphabet.index(letter) + shift_amount) % len(alphabet)
+        encrypted_text += alphabet[shifted_index]
     print(encrypted_text)
 
-encrypt(shift_amount=shift, original_text=text)
+encrypt(text, shift)
+def decrypt(original_text, shift_amount):
+    encrypted_text = ""
+    for letter in original_text:
+        shifted_index =(alphabet.index(letter) - shift_amount) % len(alphabet)
+    print(encrypted_text)
+decrypt(shift_amount=shift, original_text=text)
+
+def ceaser(original_text, shift_amount, direction):
 
 
-# TODO-2: Inside the 'encrypt()' function, shift each letter of the 'original_text' forwards in the alphabet
-#  by the shift amount and print the encrypted text.
 
-# TODO-4: What happens if you try to shift z forwards by 9? Can you fix the code?
 
-# TODO-3: Call the 'encrypt()' function and pass in the user inputs. You should be able to test the code and encrypt a
-#  message.
+# TODO-1: Create a function called 'decrypt()' that takes 'original_text' and 'shift_amount' as inputs.
+# TODO-2: Inside the 'decrypt()' function, shift each letter of the 'original_text' *backwards* in the alphabet
+#  by the shift amount and print the decrypted text.
+# TODO-3: Combine the 'encrypt()' and 'decrypt()' functions into one function called 'caesar()'.
+#  Use the value of the user chosen 'direction' variable to determine which functionality to use.
