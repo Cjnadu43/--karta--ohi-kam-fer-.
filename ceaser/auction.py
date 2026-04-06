@@ -1,32 +1,30 @@
 from auction_art_SMELLMYFART import logo
 print(logo)
-name = input("What is your name?: "). lower()
-price = int(input("What is your bid you fliping monkey?: $"))
-other_bids = input("Are there any other bids?:  Type \"yes\" or \"no\"").lower()
+
+def get_highest_bid(bids):
+    highest_bid = 0
+    winner = ""
+    for bid in bids:
+        bid_amount = bids[bid]
+        if bid_amount > highest_bid:
+            highest_bid = bids[bid]
+            winner = bid
+
+    print(f"the highest bis is {highest_bid} by {winner}")
 
 list_of_bids = {}
+is_game_on = True
+while is_game_on:
+    name = input("what is ur name?: ").lower()
+    price = int(input("what is ur bid: $"))
+    other_bids = input("are there any other bids?: type \"yes\" or \"no").lower()
 
-
-while other_bids == "yes":
     list_of_bids[name] = price
 
-
-print(list_of_bids)
-
-
-
-
-
-
-
-
-
-# Functionality
-# Each person writes their name and bid.
-# The program asks if there are others who need to bid. If so, then the computer clears the output (prints several blank lines) then loops back to asking name and bid.
-# Each person's name and bid are saved to a dictionary.
-# Once all participants have placed their bid, the program works out who has the highest bid and prints it.
-# TODO-1: Ask the user for input
-# TODO-2: Save data into dictionary {name: price}
-# TODO-3: Whether if new bids need to be added
-# TODO-4: Compare bids in dictionary
+    if other_bids == "no":
+        is_game_on = False
+        get_highest_bid(list_of_bids)
+    elif other_bids == "yes":
+        print("\n" * 67)
+    else:
+        print("please enter either yes or no!")
